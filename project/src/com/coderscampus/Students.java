@@ -1,33 +1,32 @@
 package com.coderscampus;
 
 public class Students implements Comparable<Students> {
-
-    private Integer studentId;
-    private Integer studentGrade;
+    private String studentId;
+    private String studentName;
     private String course;
-    private Integer grade;
+    private String studentGrade;
 
-    public Students(int studentId, String studentGrade, String course, int grade) {
+    public Students(String studentId, String studentName, String course, String studentGrade) {
         this.studentId = studentId;
-        this.studentGrade = Integer.valueOf(studentGrade);
+        this.studentName = studentName;
         this.course = course;
-        this.grade = grade;
+        this.studentGrade = studentGrade;
     }
 
-    public Integer getStudentId() {
+    public String getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(Integer studentId) {
+    public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
 
-    public Integer getStudentGrade() {
-        return studentGrade;
+    public String getStudentName() {
+        return studentName;
     }
 
-    public void setStudentGrade(Integer studentGrade) {
-        this.studentGrade = studentGrade;
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 
     public String getCourse() {
@@ -38,17 +37,21 @@ public class Students implements Comparable<Students> {
         this.course = course;
     }
 
-    public Integer getGrade() {
-        return grade;
+    public String getStudentGrade() {
+        return studentGrade;
     }
 
-    public void setGrade(Integer grade) {
-        this.grade = grade;
+    public void setStudentGrade(String studentGrade) {
+        this.studentGrade = studentGrade;
     }
-
 
     @Override
-    public int compareTo(Students o) {
-        return 0;
+    public int compareTo(Students that) {
+        if (this.studentGrade.compareTo(that.studentGrade) == 0) {
+            return this.studentGrade.compareTo(that.studentGrade);
+
+        } else {
+            return that.studentGrade.compareTo(this.studentGrade);
+        }
     }
 }
