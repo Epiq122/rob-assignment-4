@@ -1,5 +1,3 @@
-package com.coderscampus;
-
 import java.io.IOException;
 
 
@@ -8,5 +6,6 @@ public class Assignment4Application {
 
         User user = new User();
         user.getStudents();
+
     }
 }

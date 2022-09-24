@@ -1,5 +1,3 @@
-package com.coderscampus;
-
 public class Students implements Comparable<Students> {
     private String studentId;
     private String studentName;
@@ -53,5 +51,15 @@ public class Students implements Comparable<Students> {
         } else {
             return that.studentGrade.compareTo(this.studentGrade);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "studentId='" + studentId + '\'' +
+                ", studentName='" + studentName + '\'' +
+                ", course='" + course + '\'' +
+                ", studentGrade='" + studentGrade + '\'' +
+                '}';
     }
 }

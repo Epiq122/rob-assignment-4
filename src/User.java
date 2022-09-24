@@ -1,5 +1,3 @@
-package com.coderscampus;
-
 import java.io.*;
 import java.util.Arrays;
 
@@ -7,16 +5,17 @@ import java.util.Arrays;
 //
 public class User {
 
-    public Students[] getStudents() throws IOException {
+    public void getStudents() throws IOException {
         Students[] apStudents = new Students[33];
         Students[] compStudents = new Students[34];
         Students[] statStudents = new Students[33];
 
 
-        try (BufferedReader readFile = new BufferedReader(new FileReader("student-master-list.csv"));
-             BufferedWriter file1 = new BufferedWriter(new FileWriter("course1-csv"));
-             BufferedWriter file2 = new BufferedWriter(new FileWriter("course2-csv"));
-             BufferedWriter file3 = new BufferedWriter(new FileWriter("course3-csv"))) {
+        try (BufferedReader readFile = new BufferedReader(new FileReader("src/resources/student-master" +
+                "-list.csv"));
+             BufferedWriter file1 = new BufferedWriter(new FileWriter("src/resources/course1-csv"));
+             BufferedWriter file2 = new BufferedWriter(new FileWriter("src/resources/course2-csv"));
+             BufferedWriter file3 = new BufferedWriter(new FileWriter("src/resources/course3-csv"))) {
 
             int i = 0;
             String line = null;
@@ -72,7 +71,7 @@ public class User {
             }
             Arrays.sort(statStudents);
             file3.write("Student ID | Student Name | Course | Grade\n");
-          
+
             for (Students student : statStudents) {
                 file3.write(student.getStudentId() + ",");
                 file3.write(student.getStudentName() + ",");
@@ -80,7 +79,6 @@ public class User {
                 file3.write(student.getStudentGrade() + "\n");
 
             }
-            return students;
         }
 
     }
